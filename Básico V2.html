@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Painel de Login</title>
+	<style type="text/css">
+		body {
+			font-family: Arial, sans-serif;
+			background-color: black; /* Adicionando a cor preta ao fundo */
+		}
+		.container {
+			margin: 100px auto;
+			max-width: 400px;
+			background-color: #fff;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.2);
+		}
+		label {
+			display: block;
+			font-weight: bold;
+			margin-bottom: 5px;
+		}
+		input[type="text"], input[type="password"] {
+			padding: 5px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			margin-bottom: 10px;
+			width: 100%;
+		}
+		input[type="submit"] {
+			background-color: #0077cc;
+			color: #fff;
+			border: none;
+			padding: 10px;
+			border-radius: 5px;
+			cursor: pointer;
+			width: 100%;
+		}
+		.hide {
+			display: none;
+		}
+		.message {
+			background-color: #fff;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.2);
+			text-align: center;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<form id="login-form">
+			<label for="username">Usuário</label>
+			<input type="text" name="username" id="username" required>
+			<label for="password">Senha</label>
+			<input type="password" name="password" id="password" required>
+			<input type="submit" value="Entrar">
+		</form>
+		<div id="message" class="hide">
+			<p>Em Desenvolvimento! =0</p>
+		</div>
+	</div>
+
+	<script>
+		const form = document.querySelector('#login-form');
+		const message = document.querySelector('#message');
+
+		form.addEventListener('submit', (event) => {
+			event.preventDefault();
+
+			const username = form.querySelector('#username').value;
+			const password = form.querySelector('#password').value;
+
+			if (username === 'Solxotic' && password === 'Admin') {
+				form.classList.add('hide');
+				message.classList.remove('hide');
+			} else {
+				alert('Usuário ou senha inválidos');
+			}
+		});
+	</script>
+</body>
+</html>
